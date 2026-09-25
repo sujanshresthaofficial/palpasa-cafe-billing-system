@@ -26,10 +26,11 @@ function validateLogin() {
     } else if (username != "admin@palpasa.cafe") {
         signinError.innerHTML = "Email doesn't match!";
         return false;
-    } else if(password != "admin") {
+    } else if (password != "admin") {
         signinError.innerHTML = "Password doesn't match!"
         return false;
     }
+    sessionStorage.setItem("isLoggédIn", "true");
     window.location.href = "dashboard.html";
     return false;
 }

@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Dashboard | Palpasa Café</title>
+    <script>
+        if (sessionStorage.getItem("isLoggédIn") !== "true") {
+            alert("Access Denied! Please log in first.");
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 
-<body>
+<body class="dash-body">
     <header>
         <div class="dashboard-header">
             <div class="logo">
@@ -22,11 +28,12 @@
     <div class="dashboard-container">
         <aside>
             <a href="#" class="menu">System</a>
-            <a href="#" class="menu">System</a>
-            <a href="#" class="menu">System</a>
-            <a href="#" class="menu">System</a>
-            <a href="#" class="menu">System</a>
-            <a href="#" class="menu">System</a>
+            <a href="#" class="menu">Purchase</a>
+            <a href="#" class="menu">Sales</a>
+            <a href="#" class="menu">Inventory</a>
+            <a href="#" class="menu">Debtors</a>
+            <a href="#" class="menu">Creditors</a>
+            <button class="logoutBtn" onclick="logout()">Log Out</button>
         </aside>
         <main>
             <section class="dash-welcome-back">
@@ -34,26 +41,42 @@
             </section>
             <section class="link">
                 <a href="#" class="links">
-                    <p class="fa fa-user"></p><p>Users</p>
+                    <p class="fa fa-user"></p>
+                    <p>Users</p>
                 </a>
                 <a href="#" class="links">
-                    <p class="fa fa-list"></p><p>Orders</p>
+                    <p class="fa fa-list"></p>
+                    <p>Orders</p>
                 </a>
                 <a href="#" class="links">
-                    <p class="fa fa-burger"></p><p>Foods</p>
+                    <p class="fa fa-burger"></p>
+                    <p>Foods</p>
                 </a>
                 <a href="#" class="links">
-                    <p class="fa fa-coffee"></p><p>Drinks</p>
+                    <p class="fa fa-coffee"></p>
+                    <p>Drinks</p>
                 </a>
                 <a href="#" class="links">
-                    <p class="fa fa-pie-chart"></p><p>Reports</p>
+                    <p class="fa fa-pie-chart"></p>
+                    <p>Reports</p>
                 </a>
                 <a href="#" class="links">
-                    <p class="fa fa-cog"></p><p>Settings</p>
+                    <p class="fa fa-cog"></p>
+                    <p>Settings</p>
                 </a>
             </section>
         </main>
     </div>
+
+    <script>
+        function logout() {
+            let logoutVal = confirm("Are you sure want to logout?");
+            if (logoutVal == true) {
+                sessionStorage.removeItem("isLoggédIn");
+                window.location.href = "login.html";
+            }
+        }
+    </script>
 </body>
 
 </html>
