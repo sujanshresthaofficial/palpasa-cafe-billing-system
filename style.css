@@ -22,16 +22,16 @@ body {
 }
 
 .header-container {
-    padding: 20px;
-    height: 10vh;
+    padding: 0 20px;
+    height: 12vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
 
-.logo img {
-    height: 80px;
+.header-container .logo img {
+    height: 83px;
     width: 250px;
 }
 
@@ -74,13 +74,21 @@ body {
 }
 
 .hero {
-    padding: 20px;
-    height: 80vh;
+    padding: 0 20px;
+    height: 88vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.hero img {
+        opacity: 15%;
+        height: 88vh;
+        width: 100%;
+        position: absolute;
+        filter:grayscale(100%);
+    }
 
 .hero .welcome {
     background: url(assets/luxury-café.jpg);
@@ -103,14 +111,10 @@ body {
     font-size: 36px;
     text-align: right;
 }
-/* 
-.fa-solid .fa-chevron-up {
-    color: #fff;
-    font-size: ;
-} */
 
 @media screen and (max-width: 768px) {
     .header-container {
+        height: 18vh;
         justify-content: center;
     }
 
@@ -130,9 +134,20 @@ body {
         gap: 30px;
         flex-wrap: wrap;
         justify-content: center;
+        z-index: 10;
     }
 
-    .hero {}
+    .hero {
+        height: 82vh;
+    }
+
+    .hero img {
+        opacity: 15%;
+        height: 82vh;
+        width: 100%;
+        filter:grayscale(100%);
+        position: absolute;
+    }
 }
 
 
@@ -164,7 +179,8 @@ footer {
     padding: 10px;
     height: 20vh;
     display: flex;
-    justify-self: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-container .copyright {
@@ -175,18 +191,17 @@ footer {
 }
 
 #scrollTop {
+    cursor: pointer;
+    right: 10px;
+    bottom: 10px;
+    position: fixed;
     border-style: none;
     border-radius: 8px;
     height: 40px;
-    width: 50px;
+    width: 40px;
     padding: 5px;
     color: #fff;
     background-color: var(--secondary-color);
-    font-weight: bold;
-    cursor: pointer;
-    position: fixed;
-    right: 20px;
-    bottom: 30px;
     z-index: 1000;
     transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
