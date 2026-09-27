@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+
     <title>Login Page | Palpasa Café</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -25,6 +25,7 @@
             justify-content: center;
             flex-direction: column;
             height: 100vh;
+            position: relative;
         }
 
         .container {
@@ -57,7 +58,7 @@
         }
 
         .container button {
-            background-color: #512da8;
+            background-color: #2391b5;
             color: #fff;
             font-size: 12px;
             padding: 10px 45px;
@@ -94,6 +95,32 @@
             border-radius: 8px;
             width: 100%;
             outline: none;
+        }
+
+        .container .signinError {
+            margin: 5px 0 0 0;
+        }
+
+        .container .forgetPassword {
+            justify-content: flex-end;
+        }
+
+        .login-header {
+            padding: 0 20px;
+            top: 0;
+            left: 0;
+            height: 12vh;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+        }
+
+        .logo img {
+            height: 83px;
+            width: 250px;
         }
 
         .form-container {
@@ -175,9 +202,9 @@
         }
 
         .toggle {
-            background-color: #512da8;
+            background-color: #2391b5;
             height: 100%;
-            background: linear-gradient(to right, #5c6bc0, #512da8);
+            background: linear-gradient(to right, #005571, #2391b5);
             color: #fff;
             position: relative;
             left: -100%;
@@ -227,17 +254,27 @@
 
 <body>
 
+    <header>
+        <div class="login-header">
+            <div class="logo">
+                <a href="index.php">
+                    <img src="assets/palpasa-café-logo.png" alt="Palpasa Café">
+                </a>
+            </div>
+        </div>
+    </header>
+
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
-                <h1>Create Account</h1>
-                <div class="social-icons">
+                <h1>Create Account</h1> <br>
+                <!-- <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <span>or use your email for registeration</span>
+                <span>or use your email for registeration</span> -->
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
                 <input type="password" placeholder="Password">
@@ -246,18 +283,18 @@
         </div>
         <div class="form-container sign-in">
             <form onsubmit="return validateLogin()">
-                <h1>Sign In</h1>
-                <div class="social-icons">
+                <h1>Sign In</h1> <br>
+                <!-- <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <span>or use your email password</span>
+                <span>or use your email password</span> -->
                 <input type="email" placeholder="Email" id="loginEmail">
                 <input type="password" placeholder="Password" id="loginPassword">
-                <p style="color: red;" id="signinError"></p>
-                <a href="#">Forget Your Password?</a>
+                <p class="signinError" style="color: red;" id="signinError"></p>
+                <a class="forgetPassword" href="#">Forget Your Password?</a>
                 <button id="login-btn">Sign In</button>
             </form>
         </div>
@@ -265,12 +302,12 @@
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
                     <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
+                    <p>Enter your personal details to use all of the site features</p>
                     <button class="hidden" id="login">Sign In</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Hello, Friend!</h1>
-                    <p>Register with your personal details to use all of site features</p>
+                    <p>Register with your personal details to use all of the site features</p>
                     <button class="hidden" id="register">Sign Up</button>
                 </div>
             </div>

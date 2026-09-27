@@ -1,3 +1,4 @@
+// Scroll to Top
 let scrollTop = document.getElementById("scrollTop");
 
 window.addEventListener("scroll", () => {
@@ -15,6 +16,7 @@ scrollTop.addEventListener("click", () => {
     });
 });
 
+// Login Validation
 function validateLogin() {
     username = document.getElementById("loginEmail").value;
     password = document.getElementById("loginPassword").value;
@@ -31,6 +33,6 @@ function validateLogin() {
         return false;
     }
     sessionStorage.setItem("isLoggédIn", "true");
-    window.location.href = "dashboard.html";
+    window.location.href = "dashboard.php";
     return false;
 }
